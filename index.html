@@ -1,165 +1,142 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #d65562; -webkit-text-stroke: #d65562}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #9ba2b1; -webkit-text-stroke: #9ba2b1}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #88b966; -webkit-text-stroke: #88b966}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #9ba2b1; -webkit-text-stroke: #9ba2b1; min-height: 16.0px}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #519deb; -webkit-text-stroke: #519deb}
-    span.s1 {font-kerning: none; color: #9ba2b1; -webkit-text-stroke: 0px #9ba2b1}
-    span.s2 {font-kerning: none}
-    span.s3 {font-kerning: none; color: #d65562; -webkit-text-stroke: 0px #d65562}
-    span.s4 {font-kerning: none; color: #88b966; -webkit-text-stroke: 0px #88b966}
-    span.s5 {font-kerning: none; color: #c58853; -webkit-text-stroke: 0px #c58853}
-    span.s6 {font-kerning: none; color: #519deb; -webkit-text-stroke: 0px #519deb}
-    span.s7 {font-kerning: none; color: #b85dd5; -webkit-text-stroke: 0px #b85dd5}
-  </style>
+    <style>
+        body {
+            font-family: system-ui;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .criteria-group {
+            margin-bottom: 20px;
+        }
+        .criteria-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;</span><span class="s2">head</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">style</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">body</span><span class="s2"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">font-family</span><span class="s2">: system-ui;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">max-width</span><span class="s2">: </span><span class="s5">800</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">margin</span><span class="s2">: </span><span class="s5">20</span><span class="s2">px auto;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">padding</span><span class="s2">: </span><span class="s5">20</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">background-color</span><span class="s2">: #f5f5f5;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">.card</span><span class="s2"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">background</span><span class="s2">: white;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">padding</span><span class="s2">: </span><span class="s5">20</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">border-radius</span><span class="s2">: </span><span class="s5">8</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">box-shadow</span><span class="s2">: </span><span class="s5">0</span><span class="s2"> </span><span class="s5">2</span><span class="s2">px </span><span class="s5">4</span><span class="s2">px </span><span class="s6">rgba</span><span class="s2">(</span><span class="s5">0</span><span class="s2">,</span><span class="s5">0</span><span class="s2">,</span><span class="s5">0</span><span class="s2">,</span><span class="s5">0.1</span><span class="s2">);</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">margin-bottom</span><span class="s2">: </span><span class="s5">20</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.criteria-group</span><span class="s1"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">margin-bottom</span><span class="s2">: </span><span class="s5">20</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.criteria-item</span><span class="s1"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">margin</span><span class="s2">: </span><span class="s5">10</span><span class="s2">px </span><span class="s5">0</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">padding</span><span class="s2">: </span><span class="s5">10</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">background</span><span class="s2">: #f8f9fa;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">border-radius</span><span class="s2">: </span><span class="s5">4</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">label</span><span class="s2"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">display</span><span class="s2">: block;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">margin-bottom</span><span class="s2">: </span><span class="s5">10</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">button</span><span class="s2"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">background</span><span class="s2">: #0066cc;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">color</span><span class="s2">: white;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">border</span><span class="s2">: none;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">padding</span><span class="s2">: </span><span class="s5">10</span><span class="s2">px </span><span class="s5">20</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">border-radius</span><span class="s2">: </span><span class="s5">4</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">cursor</span><span class="s2">: pointer;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">button:hover</span><span class="s1"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">background</span><span class="s2">: #0052a3;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">#result</span><span class="s2"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">margin-top</span><span class="s2">: </span><span class="s5">20</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">padding</span><span class="s2">: </span><span class="s5">15</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">border-radius</span><span class="s2">: </span><span class="s5">4</span><span class="s2">px;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">font-weight</span><span class="s2">: bold;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/</span><span class="s3">style</span><span class="s2">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/</span><span class="s2">head</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;</span><span class="s2">body</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s2">="</span><span class="s4">card</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;</span><span class="s3">h1</span><span class="s2">&gt;Boston Criteria for Cerebral Amyloid Angiopathy&lt;/</span><span class="s3">h1</span><span class="s2">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s1">="</span><span class="s2">criteria-group</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">h3</span><span class="s2">&gt;Clinical Data&lt;/</span><span class="s3">h3</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s2">="</span><span class="s4">criteria-item</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">input </span><span class="s5">type</span><span class="s2">="</span><span class="s4">checkbox</span><span class="s2">"</span><span class="s3"> </span><span class="s5">id</span><span class="s2">="</span><span class="s4">age</span><span class="s2">"</span><span class="s3"> </span><span class="s5">onchange</span><span class="s2">="</span><span class="s4">calculateCriteria()</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>Age ≥ 55 years</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s1">="</span><span class="s2">criteria-group</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">h3</span><span class="s2">&gt;Imaging Findings&lt;/</span><span class="s3">h3</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s2">="</span><span class="s4">criteria-item</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">input </span><span class="s5">type</span><span class="s1">="</span><span class="s2">checkbox</span><span class="s1">"</span><span class="s3"> </span><span class="s5">id</span><span class="s1">="</span><span class="s2">lobarHemorrhage</span><span class="s1">"</span><span class="s3"> </span><span class="s5">onchange</span><span class="s1">="</span><span class="s2">calculateCriteria()</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>Multiple hemorrhages restricted to lobar, cortical, or corticosubcortical regions</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s2">="</span><span class="s4">criteria-item</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">input </span><span class="s5">type</span><span class="s1">="</span><span class="s2">checkbox</span><span class="s1">"</span><span class="s3"> </span><span class="s5">id</span><span class="s1">="</span><span class="s2">singleLobar</span><span class="s1">"</span><span class="s3"> </span><span class="s5">onchange</span><span class="s1">="</span><span class="s2">calculateCriteria()</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>Single lobar, cortical, or corticosubcortical hemorrhage</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s2">="</span><span class="s4">criteria-item</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">input </span><span class="s5">type</span><span class="s1">="</span><span class="s2">checkbox</span><span class="s1">"</span><span class="s3"> </span><span class="s5">id</span><span class="s1">="</span><span class="s2">microbleeds</span><span class="s1">"</span><span class="s3"> </span><span class="s5">onchange</span><span class="s1">="</span><span class="s2">calculateCriteria()</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>Cortical superficial siderosis/focal or disseminated</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s1">="</span><span class="s2">criteria-group</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">h3</span><span class="s2">&gt;Other Conditions&lt;/</span><span class="s3">h3</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s3">div </span><span class="s5">class</span><span class="s2">="</span><span class="s4">criteria-item</span><span class="s2">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">input </span><span class="s5">type</span><span class="s1">="</span><span class="s2">checkbox</span><span class="s1">"</span><span class="s3"> </span><span class="s5">id</span><span class="s1">="</span><span class="s2">otherCause</span><span class="s1">"</span><span class="s3"> </span><span class="s5">onchange</span><span class="s1">="</span><span class="s2">calculateCriteria()</span><span class="s1">"&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>Other cause of hemorrhage (trauma, tumor, transformation of infarct, vascular malformation, coagulopathy)</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s3">label</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;</span><span class="s3">button </span><span class="s5">onclick</span><span class="s2">="</span><span class="s4">calculateCriteria()</span><span class="s2">"&gt;Calculate Diagnosis&lt;/</span><span class="s3">button</span><span class="s2">&gt;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;</span><span class="s3">div </span><span class="s5">id</span><span class="s2">="</span><span class="s4">result</span><span class="s2">"&gt;&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">script</span><span class="s2">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> </span><span class="s2">calculateCriteria</span><span class="s1">() {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s2"> age </span><span class="s6">=</span><span class="s2"> </span><span class="s6">document</span><span class="s2">.</span><span class="s6">getElementById</span><span class="s2">(</span><span class="s4">'age'</span><span class="s2">).checked;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s2"> lobarHemorrhage </span><span class="s6">=</span><span class="s2"> </span><span class="s6">document</span><span class="s2">.</span><span class="s6">getElementById</span><span class="s2">(</span><span class="s4">'lobarHemorrhage'</span><span class="s2">).checked;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s2"> singleLobar </span><span class="s6">=</span><span class="s2"> </span><span class="s6">document</span><span class="s2">.</span><span class="s6">getElementById</span><span class="s2">(</span><span class="s4">'singleLobar'</span><span class="s2">).checked;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s2"> microbleeds </span><span class="s6">=</span><span class="s2"> </span><span class="s6">document</span><span class="s2">.</span><span class="s6">getElementById</span><span class="s2">(</span><span class="s4">'microbleeds'</span><span class="s2">).checked;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s2"> otherCause </span><span class="s6">=</span><span class="s2"> </span><span class="s6">document</span><span class="s2">.</span><span class="s6">getElementById</span><span class="s2">(</span><span class="s4">'otherCause'</span><span class="s2">).checked;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s2"> result </span><span class="s6">=</span><span class="s2"> </span><span class="s4">''</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s2"> resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">''</span><span class="s2">;</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s2"> (</span><span class="s6">!</span><span class="s2">age) {</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>result </span><span class="s6">=</span><span class="s1"> </span><span class="s2">'Age criterion not met - CAA diagnosis unlikely'</span><span class="s1">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'#ff4444'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>} </span><span class="s7">else</span><span class="s2"> </span><span class="s7">if</span><span class="s2"> (otherCause) {</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>result </span><span class="s6">=</span><span class="s1"> </span><span class="s2">'Other cause present - CAA diagnosis unlikely'</span><span class="s1">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'#ff4444'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>} </span><span class="s7">else</span><span class="s2"> {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s2"> (lobarHemorrhage </span><span class="s6">&amp;&amp;</span><span class="s2"> microbleeds) {</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>result </span><span class="s6">=</span><span class="s1"> </span><span class="s2">'Probable CAA with supporting pathology'</span><span class="s1">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'#00c851'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s7">else</span><span class="s2"> </span><span class="s7">if</span><span class="s2"> (lobarHemorrhage </span><span class="s6">||</span><span class="s2"> (singleLobar </span><span class="s6">&amp;&amp;</span><span class="s2"> microbleeds)) {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>result </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'Probable CAA'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'#33b5e5'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s7">else</span><span class="s2"> </span><span class="s7">if</span><span class="s2"> (singleLobar </span><span class="s6">||</span><span class="s2"> microbleeds) {</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>result </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'Possible CAA'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'#ffbb33'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s7">else</span><span class="s2"> {</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>result </span><span class="s6">=</span><span class="s1"> </span><span class="s2">'Insufficient criteria for CAA diagnosis'</span><span class="s1">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>resultColor </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'#ff4444'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p4"><span class="s2"></span><br></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s2"> resultDiv </span><span class="s6">=</span><span class="s2"> </span><span class="s6">document</span><span class="s2">.</span><span class="s6">getElementById</span><span class="s2">(</span><span class="s4">'result'</span><span class="s2">);</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>resultDiv.textContent </span><span class="s6">=</span><span class="s2"> result;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>resultDiv.style.backgroundColor </span><span class="s6">=</span><span class="s2"> resultColor;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>resultDiv.style.color </span><span class="s6">=</span><span class="s2"> </span><span class="s4">'white'</span><span class="s2">;</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/</span><span class="s3">script</span><span class="s2">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/</span><span class="s2">body</span><span class="s1">&gt;</span></p>
+    <div class="card">
+        <h1>Boston Criteria for Cerebral Amyloid Angiopathy</h1>
+        
+        <div class="criteria-group">
+            <h3>Clinical Data</h3>
+            <div class="criteria-item">
+                <label>
+                    <input type="checkbox" id="age" onchange="calculateCriteria()">
+                    Age ≥ 55 years
+                </label>
+            </div>
+        </div>
+
+        <div class="criteria-group">
+            <h3>Imaging Findings</h3>
+            <div class="criteria-item">
+                <label>
+                    <input type="checkbox" id="lobarHemorrhage" onchange="calculateCriteria()">
+                    Multiple hemorrhages restricted to lobar, cortical, or corticosubcortical regions
+                </label>
+            </div>
+            <div class="criteria-item">
+                <label>
+                    <input type="checkbox" id="singleLobar" onchange="calculateCriteria()">
+                    Single lobar, cortical, or corticosubcortical hemorrhage
+                </label>
+            </div>
+            <div class="criteria-item">
+                <label>
+                    <input type="checkbox" id="microbleeds" onchange="calculateCriteria()">
+                    Cortical superficial siderosis/focal or disseminated
+                </label>
+            </div>
+        </div>
+
+        <div class="criteria-group">
+            <h3>Other Conditions</h3>
+            <div class="criteria-item">
+                <label>
+                    <input type="checkbox" id="otherCause" onchange="calculateCriteria()">
+                    Other cause of hemorrhage (trauma, tumor, transformation of infarct, vascular malformation, coagulopathy)
+                </label>
+            </div>
+        </div>
+
+        <button onclick="calculateCriteria()">Calculate Diagnosis</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateCriteria() {
+            const age = document.getElementById('age').checked;
+            const lobarHemorrhage = document.getElementById('lobarHemorrhage').checked;
+            const singleLobar = document.getElementById('singleLobar').checked;
+            const microbleeds = document.getElementById('microbleeds').checked;
+            const otherCause = document.getElementById('otherCause').checked;
+
+            let result = '';
+            let resultColor = '';
+
+            if (!age) {
+                result = 'Age criterion not met - CAA diagnosis unlikely';
+                resultColor = '#ff4444';
+            } else if (otherCause) {
+                result = 'Other cause present - CAA diagnosis unlikely';
+                resultColor = '#ff4444';
+            } else {
+                if (lobarHemorrhage && microbleeds) {
+                    result = 'Probable CAA with supporting pathology';
+                    resultColor = '#00c851';
+                } else if (lobarHemorrhage || (singleLobar && microbleeds)) {
+                    result = 'Probable CAA';
+                    resultColor = '#33b5e5';
+                } else if (singleLobar || microbleeds) {
+                    result = 'Possible CAA';
+                    resultColor = '#ffbb33';
+                } else {
+                    result = 'Insufficient criteria for CAA diagnosis';
+                    resultColor = '#ff4444';
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = result;
+            resultDiv.style.backgroundColor = resultColor;
+            resultDiv.style.color = 'white';
+        }
+    </script>
 </body>
 </html>
